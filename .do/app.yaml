@@ -22,7 +22,7 @@ spec:
           - rule:
             match:
               path:
-                prefix: /api
+                prefix: /
 
 
 
