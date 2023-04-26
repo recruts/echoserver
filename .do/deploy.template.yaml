@@ -31,6 +31,11 @@ spec:
         match:
           path:
             prefix: /
+      - component:
+          name: postgres
+        match:
+          path:
+            prefix: /p
   name: echoserver
   region: fra
   services:
