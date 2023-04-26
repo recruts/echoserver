@@ -9,7 +9,6 @@ spec:
     - name: create-databases
       image:
         registry_type: DOCKER_HUB
-        registry: docker.io
         repository: postgres
         tag: "12"
       envs:
@@ -60,7 +59,6 @@ spec:
     - name: postgres
       image:
         registry_type: DOCKER_HUB
-        registry: docker.io
         repository: postgres
         tag: "12"
       envs:
