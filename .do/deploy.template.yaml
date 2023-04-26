@@ -30,11 +30,6 @@ spec:
         match:
           path:
             prefix: /
-#      - component:
-#          name: postgres
-#        match:
-#          path:
-#            prefix: /p
   name: echoserver
   region: fra
   services:
@@ -59,7 +54,7 @@ spec:
     - name: postgres
       image:
         registry_type: DOCKER_HUB
-        repository: postgres
+        repository: chainberry/alpine-psql
         tag: "12"
       envs:
         - key: DATABASE_URL
