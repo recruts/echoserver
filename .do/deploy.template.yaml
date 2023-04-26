@@ -31,11 +31,11 @@ spec:
         match:
           path:
             prefix: /
-      - component:
-          name: postgres
-        match:
-          path:
-            prefix: /p
+#      - component:
+#          name: postgres
+#        match:
+#          path:
+#            prefix: /p
   name: echoserver
   region: fra
   services:
@@ -55,13 +55,13 @@ spec:
       http_port: 80
       instance_count: 1
       instance_size_slug: basic-xxs
-    - name: postgres
-      image:
-        registry_type: DOCKER_HUB
-        registry: docker.io
-        repository: postgres
-        tag: "12"
-      envs:
-        - key: DATABASE_URL
-          value: "${db.DATABASE_URL}"
+#    - name: postgres
+#      image:
+#        registry_type: DOCKER_HUB
+#        registry: docker.io
+#        repository: postgres
+#        tag: "12"
+#      envs:
+#        - key: DATABASE_URL
+#          value: "${db.DATABASE_URL}"
 
