@@ -5,16 +5,16 @@ spec:
       num_nodes: 1
       size: db-s-dev-database
       version: "12"
-  jobs:
-    image:
-      registry_type: DOCKER_HUB
-      registry: docker.io
-      repository: postgres
-      tag: "12"
-    envs:
-      - key: DATABASE_URL
-        value: "${db.DATABASE_URL}"
-    run_command: psql -c "CREATE DATABASE db1;"
+#  jobs:
+#    image:
+#      registry_type: DOCKER_HUB
+#      registry: docker.io
+#      repository: postgres
+#      tag: "12"
+#    envs:
+#      - key: DATABASE_URL
+#        value: "${db.DATABASE_URL}"
+#    run_command: psql -c "CREATE DATABASE db1;"
   alerts:
     - rule: DEPLOYMENT_FAILED
     - rule: DOMAIN_FAILED
