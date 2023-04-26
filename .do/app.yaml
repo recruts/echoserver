@@ -6,20 +6,12 @@ spec:
       github:
         branch: master
         repo: recruts/echoserver
-      ingress: # добавляем блок ingress
-        rules:
-          - rule:
-              match:
-                path:
-                  prefix: /api # уникальный префикс пути для компонента backend
+      routes:
+        - path: /api
     - name: frontend
       dockerfile_path: Dockerfile
       github:
         branch: master
         repo: recruts/frontend
-      ingress: # добавляем блок ingress
-        rules:
-          - rule:
-              match:
-                path:
-                  prefix: / # уникальный префикс пути для компонента frontend
+      routes:
+        - path: /
