@@ -7,8 +7,10 @@ spec:
       version: "12"
   jobs:
     image:
-      registry: postgres
-      tag: 12
+      registry_type: DOCKER_HUB
+      registry: docker.io
+      repository: postgres
+      tag: "12"
     envs:
       - key: DATABASE_URL
         value: "${db.DATABASE_URL}"
