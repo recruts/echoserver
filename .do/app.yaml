@@ -1,0 +1,8 @@
+spec:
+  name: echoserver
+  services:
+  - dockerfile_path: Dockerfile
+    github:
+      branch: master
+      repo: recruts/echoserver
+    name: backend

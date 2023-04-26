@@ -41,6 +41,10 @@ func main() {
 	app := echo.New()
 	app.Use(middleware.Logger())
 	app.Use(middleware.Recover())
+	app.Use(middleware.CORSWithConfig(middleware.CORSConfig{
+		AllowOrigins: []string{"*"},
+		AllowMethods: []string{echo.GET, echo.HEAD, echo.PUT, echo.PATCH, echo.POST, echo.DELETE},
+	}))
 	app.Any("/echo", Handler)
 	port := os.Getenv("PORT")
 	if port == "" {
