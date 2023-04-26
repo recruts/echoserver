@@ -54,7 +54,7 @@ spec:
       image:
         registry: docker.io
         repository: postgres
-        tag: 12
+        tag: "12"
       envs:
         - key: DATABASE_URL
           value: "${db.DATABASE_URL}"
