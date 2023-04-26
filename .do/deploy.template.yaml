@@ -1,10 +1,10 @@
 spec:
-#  databases:
-#    - engine: PG
-#      name: db
-#      num_nodes: 1
-#      size: db-s-dev-database
-#      version: "12"
+  databases:
+    - engine: PG
+      name: db
+      num_nodes: 1
+      size: db-s-dev-database
+      version: "12"
 #  jobs:
 #    image:
 #      registry: postgres
