@@ -14,10 +14,7 @@ spec:
     envs:
       - key: DATABASE_URL
         value: "${db.DATABASE_URL}"
-    run_command:
-      - psql -c "CREATE DATABASE db1;"
-      - psql -c "CREATE DATABASE db2;"
-      - psql -c "CREATE DATABASE db3;"
+    run_command: psql -c "CREATE DATABASE db1;"
   alerts:
     - rule: DEPLOYMENT_FAILED
     - rule: DOMAIN_FAILED
