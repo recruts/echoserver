@@ -54,13 +54,15 @@ spec:
       http_port: 80
       instance_count: 1
       instance_size_slug: basic-xxs
-#    - name: postgres
-#      image:
-#        registry_type: DOCKER_HUB
-#        registry: docker.io
-#        repository: postgres
-#        tag: "12"
-#      envs:
-#        - key: DATABASE_URL
-#          value: "${db.DATABASE_URL}"
+
+  worker:
+    - name: postgres
+      image:
+        registry_type: DOCKER_HUB
+        registry: docker.io
+        repository: postgres
+        tag: "12"
+      envs:
+        - key: DATABASE_URL
+          value: "${db.DATABASE_URL}"
 
