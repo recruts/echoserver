@@ -8,10 +8,9 @@ spec:
         repo: recruts/echoserver
       ingress:
         rules:
-          - rule:
-              match:
-                path:
-                  prefix: /api # Уникальный префикс пути для компонента backend
+          - path: /frontend
+            service: frontend
+
     - name: frontend
       dockerfile_path: Dockerfile
       github:
@@ -19,7 +18,7 @@ spec:
         repo: recruts/frontend
       ingress:
         rules:
-          - rule:
-              match:
-                path:
-                  prefix: /app # Уникальный префикс пути для компонента frontend
+          - path: /backend
+            service: backend
+
+
