@@ -1,8 +1,13 @@
 spec:
   name: echoserver
   services:
-  - dockerfile_path: Dockerfile
+  - name: backend
+    dockerfile_path: Dockerfile
     git:
       branch: master
       repo_clone_url: https://github.com/recruts/echoserver.git
-    name: backend
+  - name: frontend
+    dockerfile_path: Dockerfile
+    git:
+      branch: master
+      repo_clone_url: https://github.com/recruts/frontend.git
