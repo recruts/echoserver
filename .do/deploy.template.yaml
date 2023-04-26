@@ -1,4 +1,3 @@
-#${APP_DOMAIN}
 spec:
   databases:
     - engine: PG
