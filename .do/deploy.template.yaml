@@ -5,17 +5,17 @@ spec:
       num_nodes: 1
       size: db-s-dev-database
       version: "12"
-#  jobs:
-#    image:
-#      registry: postgres
-#      tag: 12
-#    envs:
-#      - key: DATABASE_URL
-#        value: "${db.DATABASE_URL}"
-#    run_command:
-#      - psql -c "CREATE DATABASE db1;"
-#      - psql -c "CREATE DATABASE db2;"
-#      - psql -c "CREATE DATABASE db3;"
+  jobs:
+    image:
+      registry: postgres
+      tag: 12
+    envs:
+      - key: DATABASE_URL
+        value: "${db.DATABASE_URL}"
+    run_command:
+      - psql -c "CREATE DATABASE db1;"
+      - psql -c "CREATE DATABASE db2;"
+      - psql -c "CREATE DATABASE db3;"
   alerts:
     - rule: DEPLOYMENT_FAILED
     - rule: DOMAIN_FAILED
