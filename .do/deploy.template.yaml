@@ -5,16 +5,22 @@ spec:
       num_nodes: 1
       size: db-s-dev-database
       version: "12"
-  jobs:
-    - name: create-databases
-      image:
-        registry_type: DOCKER_HUB
-        repository: postgres
-        tag: "12"
-      envs:
-        - key: DATABASE_URL
-          value: "${db.DATABASE_URL}"
-      run_command: psql -c "CREATE DATABASE db1;"
+#  jobs:
+#    - name: create-databases
+#      image:
+#        registry_type: DOCKER_HUB
+#        repository: postgres
+#        tag: "12"
+#      envs:
+#        - key: POSTGRES_HOSTNAME
+#          value: "${db.HOSTNAME}"
+#        - key: POSTGRES_PORT
+#          value: "${db.PORT}"
+#        - key: POSTGRES_USER
+#          value: "${db.USERNAME}"
+#        - key: PGPASSWORD
+#          value: "${db.PASSWORD}"
+#      run_command: psql -c "CREATE DATABASE db1;"
   alerts:
     - rule: DEPLOYMENT_FAILED
     - rule: DOMAIN_FAILED
@@ -54,9 +60,15 @@ spec:
     - name: postgres
       image:
         registry_type: DOCKER_HUB
-        repository: chainberry/alpine-psql
+        repository: postgres
         tag: "12"
       envs:
-        - key: DATABASE_URL
-          value: "${db.DATABASE_URL}"
+        - key: POSTGRES_HOSTNAME
+          value: "${db.HOSTNAME}"
+        - key: POSTGRES_PORT
+          value: "${db.PORT}"
+        - key: POSTGRES_USER
+          value: "${db.USERNAME}"
+        - key: PGPASSWORD
+          value: "${db.PASSWORD}"
 
