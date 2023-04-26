@@ -6,19 +6,18 @@ spec:
       github:
         branch: master
         repo: recruts/echoserver
-      ingress:
-        rules:
-          - path: /frontend
-            service: frontend
-
+      routes:
+        - path: /backend
+          destination:
+            service: backend
     - name: frontend
       dockerfile_path: Dockerfile
       github:
         branch: master
         repo: recruts/frontend
-      ingress:
-        rules:
-          - path: /backend
-            service: backend
+      routes:
+        - path: /frontend
+          destination:
+            service: frontend
 
 
