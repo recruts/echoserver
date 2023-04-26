@@ -1,8 +1,13 @@
 spec:
   name: echoserver
   services:
-  - dockerfile_path: Dockerfile
+  - name: backend
+    dockerfile_path: Dockerfile
     github:
       branch: master
       repo: recruts/echoserver
-    name: backend
+  - name: frontend
+    dockerfile_path: Dockerfile
+    github:
+        branch: master
+        repo: recruts/frontend
