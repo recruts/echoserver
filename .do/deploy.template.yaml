@@ -1,9 +1,12 @@
 spec:
-  databases:
-    - engine: PG
+databases:
+    - db_name: db
+      db_user: db
+      engine: PG
       name: db
       num_nodes: 1
-      size: db-s-dev-database
+      production: true
+      size: basic-xs
       version: "12"
 #  jobs:
 #    - name: create-databases
