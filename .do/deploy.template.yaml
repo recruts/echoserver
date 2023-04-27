@@ -1,13 +1,14 @@
 spec:
-  databases:
-      - db_name: db
-        db_user: db
-        engine: PG
-        name: db
-        num_nodes: 1
-        production: true
-        size: basic-xs
-        version: "12"
+databases:
+    - cluster_name: echoserver
+      db_name: db
+      db_user: db
+      engine: PG
+      name: db
+      num_nodes: 1
+      production: true
+      size: basic-xs
+      version: "12"
 #  jobs:
 #    - name: create-databases
 #      image:
