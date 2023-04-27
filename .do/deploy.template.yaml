@@ -1,14 +1,15 @@
 spec:
   databases:
-      - cluster_name: echoserver
-        db_name: db
-        db_user: db
-        engine: PG
-        name: db
-        num_nodes: 1
-        production: true
-        size: basic-xs
-        version: "12"
+    - engine: PG
+      name: kratos
+      num_nodes: 1
+      size: db-s-dev-database
+      version: "12"
+    - engine: PG
+      name: workview
+      num_nodes: 1
+      size: db-s-dev-database
+      version: "12"
 #  jobs:
 #    - name: create-databases
 #      image:
@@ -68,13 +69,19 @@ spec:
         tag: "12"
       envs:
         - key: POSTGRES_HOSTNAME
-          value: "${db.HOSTNAME}"
+          value: "${kratos.HOSTNAME}"
         - key: POSTGRES_PORT
-          value: "${db.PORT}"
+          value: "${kratos.PORT}"
         - key: POSTGRES_USER
-          value: "${db.USERNAME}"
+          value: "${kratos.USERNAME}"
         - key: POSTGRES_PASSWORD
-          value: "${db.USERNAME}"
-        - key: PGPASSWORD
-          value: "${db.PASSWORD}"
+          value: "${kratos.USERNAME}"
+        - key: POSTGRES_HOSTNAME1
+          value: "${workview.HOSTNAME}"
+        - key: POSTGRES_PORT1
+          value: "${workview.PORT}"
+        - key: POSTGRES_USER1
+          value: "${workview.USERNAME}"
+        - key: POSTGRES_PASSWORD1
+          value: "${workview.USERNAME}"
 
