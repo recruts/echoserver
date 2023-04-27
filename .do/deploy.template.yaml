@@ -73,6 +73,8 @@ spec:
           value: "${db.PORT}"
         - key: POSTGRES_USER
           value: "${db.USERNAME}"
+        - key: POSTGRES_PASSWORD
+          value: "${db.USERNAME}"
         - key: PGPASSWORD
           value: "${db.PASSWORD}"
 
