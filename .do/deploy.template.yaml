@@ -34,12 +34,10 @@ spec:
       instance_size_slug: basic-xxs
   workers:
     - name: nginx1
-      http_port: 80
       image:
         registry_type: DOCKER_HUB
         repository: nginx
     - name: nginx2
-      http_port: 80
       image:
         registry_type: DOCKER_HUB
         repository: nginx
